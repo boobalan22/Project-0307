@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-container
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube-container
+    ports:
+      - "9000:9000"
+
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus-container
+    ports:
+      - "8081:8081"
+
+  tomcat:
+    image: tomcat:9.0
+    container_name: tomcat-container
+    ports:
+      - "8082:8080"
+
+volumes:
+  jenkins_home:

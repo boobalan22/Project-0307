@@ -1,8 +1,0 @@
-{
-  "name": "DevOps Full Stack",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "postCreateCommand": "docker-compose up -d",
-  "forwardPorts": [8080, 9000, 8081, 8082]
-}
